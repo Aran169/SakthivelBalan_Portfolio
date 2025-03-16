@@ -1,0 +1,157 @@
+
+.portfolio-container {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .home-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home-content {
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .home-content.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .home-content h1 {
+      font-size: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .home-content h1 {
+      font-size: 5rem;
+    }
+  }
+  
+  .highlight {
+    color: #7a573e;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: #554838;
+    margin-bottom: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .subtitle {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #7a573e;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #654731;
+  }
+  
+  .btn-secondary {
+    background-color: #e5d6c4;
+    color: #7a573e;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #d9c8b2;
+  }
+  
+  .decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(122, 87, 62, 0.1);
+    z-index: -1;
+  }
+  
+  .decoration-1 {
+    width: 400px;
+    height: 400px;
+    top: 25%;
+    left: -200px;
+  }
+  
+  .decoration-2 {
+    width: 300px;
+    height: 300px;
+    bottom: 20%;
+    right: -100px;
+  }
+  
+  /* Shared animation classes */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: #7a573e;
+    transition: width 0.3s ease;
+  }
+  
+  .section-title:hover::after {
+    width: 100%;
+  }
+  
