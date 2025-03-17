@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import './Technologies.css';
+import { Code, Briefcase, Layout, Globe } from 'lucide-react';
 
 const Technologies = () => {
   const sectionRef = useRef(null);
@@ -8,39 +9,23 @@ const Technologies = () => {
   const technologies = [
     {
       category: "Engineering Tools",
-      skills: [
-        { name: "SolidWorks", level: 90 },
-        { name: "AutoCAD", level: 85 },
-        { name: "MATLAB", level: 80 },
-        { name: "ANSYS", level: 75 }
-      ]
+      icon: <Layout size={24} />,
+      skills: ["SolidWorks", "AutoCAD", "MATLAB", "ANSYS"]
     },
     {
       category: "Business Skills",
-      skills: [
-        { name: "Market Research", level: 85 },
-        { name: "Financial Analysis", level: 75 },
-        { name: "Strategic Planning", level: 90 },
-        { name: "Project Management", level: 90 }
-      ]
+      icon: <Briefcase size={24} />,
+      skills: ["Market Research", "Financial Analysis", "Strategic Planning", "Project Management"]
     },
     {
-      category: "MS Office & Programming",
-      skills: [
-        { name: "Microsoft Office", level: 90 },
-        { name: "Power BI", level: 75 },
-        { name: "SQL", level: 80 },
-        { name: "Windows,Mac", level: 90 }
-      ]
+      category: "Programming",
+      icon: <Code size={24} />,
+      skills: ["Python", "R", "SQL", "Excel VBA"]
     },
     {
       category: "Languages",
-      skills: [
-        { name: "English", level: 95 },
-        { name: "German(A2)", level: 70 },
-        { name: "Hindi", level: 70 },
-        { name: "Tamil", level: 100 }
-      ]
+      icon: <Globe size={24} />,
+      skills: ["English", "German", "Hindi", "Tamil"]
     }
   ];
 
@@ -54,15 +39,6 @@ const Technologies = () => {
               setTimeout(() => {
                 el.classList.add('visible');
               }, 100 * index);
-            });
-            
-            // Animate progress bars
-            const progressBars = entry.target.querySelectorAll('.progress-bar');
-            progressBars.forEach((bar, index) => {
-              setTimeout(() => {
-                const level = bar.getAttribute('data-level');
-                bar.style.width = `${level}%`;
-              }, 300 + (100 * index));
             });
           }
         });
@@ -92,23 +68,18 @@ const Technologies = () => {
               key={index} 
               className="skills-card animate-on-scroll"
             >
-              <h3>{tech.category}</h3>
-              <div className="skills-list">
-                {tech.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
-                    <div className="skill-header">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-level">{skill.level}%</span>
-                    </div>
-                    <div className="progress-container">
-                      <div 
-                        className="progress-bar"
-                        data-level={skill.level}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+              <div className="category-header">
+                <div className="category-icon">{tech.icon}</div>
+                <h3>{tech.category}</h3>
               </div>
+              <ul className="skills-list">
+                {tech.skills.map((skill, skillIndex) => (
+                  <li key={skillIndex} className="skill-item">
+                    <span className="skill-check">✓</span>
+                    <span className="skill-name">{skill}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

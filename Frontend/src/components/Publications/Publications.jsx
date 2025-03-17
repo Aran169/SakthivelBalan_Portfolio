@@ -46,14 +46,15 @@ const Publications = () => {
       },
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const section = sectionRef.current;
+    if (section) {
+      observer.observe(section);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      
+      if (section) {
+        observer.unobserve(section);
       }
     };
   }, []);
