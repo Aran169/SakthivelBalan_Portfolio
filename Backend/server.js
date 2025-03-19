@@ -14,9 +14,10 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS? 'Loaded' : 'Not Loaded',
-  },
+    pass: process.env.EMAIL_PASS
+    },
 });
+console.log('Email Transporter Created:', transporter ? 'Yes' : 'No');
 
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
