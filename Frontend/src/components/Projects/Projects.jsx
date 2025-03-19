@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: "Virtual Reality - Based Science Lab",
       category: "engineering",
-      image: "/placeholder.svg",
+      image: "/VR.png",
       description:
         "Won first place inside the Smart India Hackathon for developing a Virtual Reality (VR) laboratory aimed at enhancing and getting to know interest of students. Led the integration of VR era to simulate a science lab, supplying hands-on, immersive educational studies.",
       technologies: ["SolidWorks", "MATLAB", "Statistical Analysis"],
